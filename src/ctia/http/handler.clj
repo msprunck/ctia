@@ -12,6 +12,7 @@
              [actor :refer [actor-routes]]
              [attack-pattern :refer [attack-pattern-routes]]
              [bulk :refer [bulk-routes]]
+             [bundle :refer [bundle-routes]]
              [campaign :refer [campaign-routes]]
              [coa :refer [coa-routes]]
              [data-table :refer [data-table-routes]]
@@ -94,6 +95,7 @@
 
                          :tags [{:name "Actor" :description "Actor operations"}
                                 {:name "Attack Pattern" :description "Attack Pattern operations"}
+                                {:name "Bundle" :description "Bundle import"}
                                 {:name "Campaign" :description "Campaign operations"}
                                 {:name "COA" :description "COA operations"}
                                 {:name "DataTable" :description "DataTable operations"}
@@ -125,6 +127,8 @@
                             actor-routes
                             attack-pattern-routes
                             bulk-routes
+                            bundle-routes
+                            ;;(undocumented bundle-routes)
                             campaign-routes
                             coa-routes
                             data-table-routes

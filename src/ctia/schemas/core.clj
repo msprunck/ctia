@@ -2,6 +2,7 @@
   (:require [ctim.schemas
              [actor :as as]
              [attack-pattern :as attack]
+             [bundle :as bundle]
              [campaign :as cs]
              [coa :as coas]
              [common :as cos]
@@ -299,6 +300,16 @@
 (def-stored-schema StoredTool
   tool/StoredTool
   "stored-tool")
+
+;; Bundle
+
+(def-acl-schema NewBundle
+  bundle/NewBundle
+  "new-bundle")
+
+(def-acl-schema Bundle
+  bundle/Bundle
+  "bundle")
 
 ;; common
 
