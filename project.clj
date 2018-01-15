@@ -43,7 +43,7 @@
                  [prismatic/schema ~schema-version]
                  [metosin/schema-tools ~schema-tools-version]
                  [threatgrid/ctim "0.4.23-SNAPSHOT"]
-                 [threatgrid/clj-momo "0.2.14"]
+                 [threatgrid/clj-momo "0.2.14-SNAPSHOT"]
 
                  ;; Web server
                  [metosin/compojure-api ~compojure-api-version

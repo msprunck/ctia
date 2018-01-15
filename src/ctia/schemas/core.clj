@@ -25,7 +25,8 @@
              [spec :as f-spec]
              [utils :as fu]]
             [schema.core :refer [Str Bool] :as sc]
-            [schema-tools.core :as st]))
+            [schema-tools.core :as st]
+            [schema.core :as s]))
 
 (sc/defschema ACLEntity
   (st/optional-keys
