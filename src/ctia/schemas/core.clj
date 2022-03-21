@@ -5,8 +5,6 @@
    [ctia.schemas.services :as external-svc-fns]
    [ctia.schemas.utils :as csu]
    [ctia.store-service.schemas :refer [GetStoreFn]]
-   ;; [ctia.entity.event.schemas :as es]
-   ;; [ctia.lib.async :as la]
    [ctim.domain.id :as id]
    [ctim.schemas.bundle :as bundle]
    [ctim.schemas.common :as cos]
