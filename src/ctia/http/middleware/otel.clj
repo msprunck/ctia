@@ -17,12 +17,25 @@
                      (mapv (fn [[path _]] [(clout/route-compile path) path])
                            entries)))))
 
+(defn ->path
+  "Normalize a request URI to match route templates produced by
+  compojure-api's get-routes: strips trailing slash (unless the path
+  is just \"/\")."
+  [uri]
+  (if (and uri (> (count uri) 1) (.endsWith ^String uri "/"))
+    (subs uri 0 (dec (count uri)))
+    uri))
+
 (defn find-route-template
   "Return the route template matching `request`, or nil if none matches.
   Falls back to GET routes for HEAD requests, matching Compojure's behavior."
   [compiled-routes request]
   (when-let [method (:request-method request)]
-    (let [method-name (name method)
+    (let [request (update request :uri ->path)
+          method-name (name method)
+          ;; Linear scan, first match wins — mirrors Compojure's own
+          ;; routing semantics. Order is preserved from get-routes which
+          ;; walks the same Route tree that Compojure uses for dispatch.
           match-route (fn [routes]
                         (some (fn [[compiled-path template]]
                                 (when (clout/route-matches compiled-path request)
